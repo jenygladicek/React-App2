@@ -1,10 +1,15 @@
 import {DESCRIPTION_STATE} from "./../actions/action-types";
 
-export default (state = {}, action) => {
+const initialState = {
+    obj: {}
+  };
+export default (state = initialState, action) => {
     switch(action.type) {
         case DESCRIPTION_STATE:
-            return action.payload;
+            return {
+                obj : action.payload
+            }
         default:
-            return state;
+            return state
     }
 }

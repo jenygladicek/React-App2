@@ -17,34 +17,27 @@ class ListForm extends Component {
         return(
             <div className="container">
             <form>
-                <label for="id">Id :</label>
-                <input type="text" class="form-control" id="id" placeholder="Enter id" name="id"/>
+                <label htmlFor="id">Id :</label>
+                <input type="text" className="form-control" id="id" placeholder="Enter id" name="id"/>
                 <br/>
-                <label for="name">Name:</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name"/>
+                <label htmlFor="name">Name:</label>
+                <input type="text" className="form-control" id="name" placeholder="Enter Name" name="name"/>
                 <br/>
-                <label for="age">Age:</label>
-                <input type="text" class="form-control" id="age" placeholder="Enter Age" name="age"/>
+                <label htmlFor="age">Age:</label>
+                <input type="text" className="form-control" id="age" placeholder="Enter Age" name="age"/>
                 <br/>
-                <label for="dept">Dept:</label>
-                <input type="text" class="form-control" id="dept" placeholder="Enter Dept" name="dept"/>
+                <label htmlFor="dept">Dept:</label>
+                <input type="text" className="form-control" id="dept" placeholder="Enter Dept" name="dept"/>
                 <br/>
-                <label for="description">Description:</label>
-                <input type="text" class="form-control" id="description" placeholder="Enter Description" name="description"/>
+                <label htmlFor="description">Description:</label>
+                <input type="text" className="form-control" id="description" placeholder="Enter Description" name="description"/>
                 <br/>
-                <button type="submit" class="btn btn-default">Submit</button>
+                <button type="submit" className="btn btn-default">Submit</button>
             </form>     
             </div>
         );
     }
 }
 
-const mapStateToProps = state => ({
 
-});
-
-const mapDispatchToProps = dispatch => ({
-
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(ListForm);
+export default connect()(ListForm);

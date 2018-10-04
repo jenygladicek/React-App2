@@ -18,6 +18,7 @@ class List extends Component {
     }
     description = (singleItem) =>{
         this.props.history.push("/description:"+singleItem.name);
+        this.props.dispatch({ type: 'DESCRIPTION_STATE', payload : singleItem });
     }
     componentDidMount() {
         this.setState({listItems : data});
@@ -68,12 +69,4 @@ class List extends Component {
     }
 }
 
-const mapStateToProps = state => ({
-
-});
-
-const mapDispatchToProps = dispatch => ({
-        description : (item) => dispatch({ type: 'DESCRIPTION_STATE', payload : item })
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(List);
+export default connect()(List);

@@ -5,3 +5,10 @@
     padding : 10px;
     margin : 10px;
   }
+  .col-lg-12 {
+    background: rgb(67, 113, 139);
+    border-radius: 4px;
+    color: white;
+    padding : 10px;
+    margin : 10px;
+  }

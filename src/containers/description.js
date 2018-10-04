@@ -6,26 +6,11 @@ import NavMenu from "./../components/NavMenu";
 import NavItem from "./../components/NavItem";
 import "./../styles/style.css";
 class Description extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            newItem:props.newItem,
-            count : 0
-        }
-    }
-    componentDidMount(){
-        console.log(this.state.newItem);
-    }
     increment = () =>{
-        this.setState({
-            count : this.state.count + 1
-        });
+      this.props.dispatch({ type: 'INCREMENT' })
     }
     decrement = () => {
-        this.setState({
-            count : this.state.count - 1
-        });
+       this.props.dispatch({ type: 'DECREMENT' })
     }
     render() {
         return(
@@ -39,11 +24,13 @@ class Description extends Component {
                 </NavMenu>
             </div>
         </nav> 
-        <div>Description page{this.props.match.params.name}</div>
+        <div>
+        <div className="col-lg-12">{this.props.myDesc}</div>
+        </div>
         <div>
             Counter Sample
         <button className="button" onClick={this.increment}>+</button>
-        <span>{this.state.count}</span>
+        <span>{this.props.count}</span>
         <button className="button" onClick={this.decrement}>-</button>
         </div>
     </div>
@@ -53,9 +40,17 @@ class Description extends Component {
 }
 
 const mapStateToProps = state => ({
- newItem : state
+ count : state.counterReducer.count,
+ myDesc : state.description.obj.description
 });
 
-
+/*const mapDispatchToProps = dispatch => ({
+   increment : () =>{
+        dispatch({ type: 'INCREMENT' })
+    },
+    decrement : () =>{
+        dispatch({ type: 'DECREMENT' })
+    }
+});*/
 
 export default connect(mapStateToProps)(Description);
