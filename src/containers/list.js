@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import Logo from "./../components/Logo"
 import NavMenu from "./../components/NavMenu";
 import NavItem from "./../components/NavItem";
+import BackGroundApp from "./../components/BackGroundApp";
 
 var data =require("./../hardCodedData").data; 
 
@@ -47,7 +48,7 @@ class List extends Component {
                 </NavMenu>
             </div>
             </nav> 
-          <div>
+          <div className="container">
               <table className="table">
                 <thead>
                     <tr>
@@ -63,7 +64,9 @@ class List extends Component {
                 </tbody>
               </table>
             </div>
-            <div><Link to="/singleItem" className="btn btn-primary">Add New Item</Link></div>
+            <div className="container"><Link to="/singleItem" className="btn btn-primary">Add New Item</Link></div>
+            <br/>
+            <BackGroundApp />
           </div>
         )
     }

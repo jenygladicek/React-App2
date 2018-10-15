@@ -12,3 +12,12 @@
     padding : 10px;
     margin : 10px;
   }
+  .backBtn{
+    float : right;
+    background: rgb(67, 113, 139);
+    color : white;
+  }
+  .btn:hover {
+    background: rgb(67, 113, 139);
+    color : white;   
+  }
